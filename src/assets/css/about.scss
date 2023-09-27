@@ -1,0 +1,32 @@
+.aboutme{
+display: flex;
+place-items: center;
+place-content: center;
+margin: 230px 0 0 0;
+font-size: 2.8rem;
+}
+.firstabout{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 140px;
+}
+.circular--landscape{
+    display: inline-block; 
+    position: relative; 
+    width: 200px; 
+    height: 200px; 
+    overflow: hidden; 
+    border-radius: 50%;
+}
+.circular--landscape img { 
+    width: auto; 
+    height: 100%; 
+    margin-left: -50px; 
+}
+.rightabout p {
+    display: grid;
+    max-width: 190px;
+    place-content: center;
+    font-size: 1.5rem;
+    gap: 5px;
+  }
