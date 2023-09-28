@@ -10,11 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-three/drei": "^9.86.0",
+    "@react-three/fiber": "^8.14.3",
+    "@types/three": "^0.156.0",
     "axios": "^1.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "react-router-dom": "^6.16.0",
+    "three": "^0.156.1",
     "toastify": "^2.0.1",
     "typed.js": "^2.0.16"
   },
