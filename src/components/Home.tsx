@@ -7,6 +7,7 @@ import Footer from "./Footer";
 import Layout from "./Layout";
 import ThirdSection from "./ThirdSection";
 import FourthSection from "./FourthSection";
+import TechStack from "./HomeTechstack";
 const Home: React.FC = () => {
   const el = useRef(null);
 
@@ -44,6 +45,10 @@ const Home: React.FC = () => {
             <div className="rightSection">
               <img src={softwareDevelopment} alt="softwaredevelopment" />
             </div>
+          </section>
+          <hr />
+          <section className="techstack">
+            <TechStack />
           </section>
           <hr />
           <SecondSection />
