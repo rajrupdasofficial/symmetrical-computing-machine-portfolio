@@ -7,7 +7,8 @@ import Footer from "./Footer";
 import Layout from "./Layout";
 import ThirdSection from "./ThirdSection";
 import FourthSection from "./FourthSection";
-import TechStack from "./HomeTechstack";
+// import TechStack from "./HomeTechstack";
+import TechStack from "./ButtonTechStack";
 const Home: React.FC = () => {
   const el = useRef(null);
 
@@ -47,7 +48,7 @@ const Home: React.FC = () => {
             </div>
           </section>
           <hr />
-          <section className="techstack">
+          <section className="techsection">
             <TechStack />
           </section>
           <hr />
