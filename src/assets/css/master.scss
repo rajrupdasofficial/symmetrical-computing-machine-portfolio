@@ -9,7 +9,7 @@
 }
 body {
    
-    background: rgb(10, 19, 54);
+    background: rgb(0, 0, 0);
     color: white;
     font-family: 'Poppins', sans-serif;
     
@@ -76,7 +76,9 @@ nav{
     justify-content: space-around;
     align-items: center;
     height: 60px;
-    background-color: rgb(10, 19, 80);
+    background-color: rgb(0, 0, 0);
+    border: 1px solid;
+    border-radius: 20px;
 }
 nav ul{
     display: flex;
@@ -204,44 +206,7 @@ color: grey;
 width: 150px;
 font-size: 10px;
 }
-footer{
-    background-color: rgb(8, 4, 26);
-    height: 278px;
-}
-.footer{
-    display: flex;
-    padding: 23px 122px;
-    justify-content: space-evenly;
-}
-.footer div{
-    width: 223px;
-}
-.footer ul{
-    list-style: none;
-}
-.footer ul li a{
-    text-decoration: none;
-}
-footer .footer-text-center{
-    color: gray;
-    display: flex;
-    justify-content: space-around;
-    margin: 50px 0;
-}
-.footer .footerfirst{
-   align-content: center;
-  display: flex;
-  flex-flow: column-reverse;
-}
-.footer .footersecond{
-    align-content: center;
-    display: flex;
-    flex-flow: column-reverse;
-}
 
-.footer .footersecond ul li a{
-    color: azure;
-}
 
 nav .menu{
     display: none;
