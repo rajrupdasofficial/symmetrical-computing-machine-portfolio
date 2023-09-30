@@ -1,27 +1,40 @@
 import React from "react";
 import "../assets/css/card.scss";
-import developer from "../assets/images/coder.jpeg";
-// import coder from "../assets/images/ml.png";
-import hh from "../assets/images/developer_m.png";
 
 const ThirdSection: React.FC = () => {
   return (
     <>
       <section className="thirdSection">
-        <div className="playarea">
-          <span className="textgrey">Play Area</span>
-
-          <h1>
-            Play with 3d cards
-            <span className="grview">Upload 3 pictures and test</span>
-          </h1>
-        </div>
-        <div className="card">
-          <div className="wrapper">
-            <img src={developer} className="cover-image" />
+        <span className="textgrey">Projects</span>
+        <h1>My projects section</h1>
+        <div className="project-cards">
+          <div className="project-card">
+            <h2>Project 1</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
+              dolorum eveniet illum molestiae neque soluta architecto, expedita
+              est, tempora culpa nulla amet mollitia totam error ipsum ea unde
+              atque eaque?
+            </p>
           </div>
-          <img src="" className="title" />
-          <img src={hh} className="character" />
+          <div className="project-card">
+            <h2>Project 2</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit
+              odio aliquam quod pariatur sunt expedita ipsam iure deserunt sed
+              sequi. Veritatis incidunt aperiam quos. Eos id odit ipsum illum
+              omnis.
+            </p>
+          </div>
+          <div className="project-card">
+            <h2>Project 3</h2>
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto
+              eaque obcaecati assumenda. Beatae modi laudantium, quis rem
+              consectetur nemo incidunt voluptas similique, ab aspernatur cumque
+              harum sunt natus dolor excepturi.
+            </p>
+          </div>
         </div>
       </section>
     </>
