@@ -148,6 +148,7 @@ nav ul li:hover::before {
 }
 .purple{
     color: blueviolet;
+    margin-left: 20px;
 }
 .textgrey{
     color: grey;
@@ -218,12 +219,6 @@ nav .menu svg {
     font-size: 1.8em;
 }
 
-.thirdSection{
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 180px;
-  margin-bottom: 90px;
-}
 @media(max-width:600px){
    
     nav .left{
@@ -238,8 +233,18 @@ nav .menu svg {
     .firstSection > div {
         width: 40%;
     }
+    .purple{
+        margin-left: 10px;
+    }
+    .mxxu{
+    color: purple;
+    margin-left: 2px;
+    }
+    .rightSection{
+        display: none;
+    }
     .leftSection {
-    font-size: 1.3rem;
+    font-size: 1.8rem;
     }
     .secondSection{
         overflow: hidden;
