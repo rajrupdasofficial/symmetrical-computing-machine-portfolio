@@ -14,6 +14,9 @@ dependencies:
   '@types/three':
     specifier: ^0.156.0
     version: 0.156.0
+  '@types/typed.js':
+    specifier: ^2.0.9
+    version: 2.0.9
   axios:
     specifier: ^1.5.0
     version: 1.5.0
@@ -687,6 +690,13 @@ packages:
       '@types/webxr': 0.5.5
       fflate: 0.6.10
       meshoptimizer: 0.18.1
+    dev: false
+
+  /@types/typed.js@2.0.9:
+    resolution: {integrity: sha512-3dbzeNES/FpuafOHkp0K9MAr/oDI+2ehjt7Nco0thgGq8Om4kpubqPFTQinP6qVTlAHsrX7g5IGckx1tUejw2g==}
+    deprecated: This is a stub types definition. typed.js provides its own type definitions, so you don't need this installed.
+    dependencies:
+      typed.js: 2.0.16
     dev: false
 
   /@types/webxr@0.5.5:
