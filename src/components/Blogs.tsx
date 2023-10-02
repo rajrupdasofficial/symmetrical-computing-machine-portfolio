@@ -1,32 +1,142 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "../assets/css/blogpage.scss";
 import NavBar from "./Nav";
+import Layout from "./Layout";
+
+export interface BlogPost {
+  id: number;
+  title: string;
+  content: string;
+}
 
 const Blog: React.FC = () => {
+  const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  // Infinite scroll logic
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const { scrollTop, clientHeight, scrollHeight } = e.currentTarget;
+
+    if (scrollHeight - scrollTop === clientHeight && !isLoading) {
+      // Fetch more blog posts here (similar to the useEffect below)
+      setIsLoading(true);
+      setTimeout(() => {
+        // Simulated new data
+        const newPosts = [
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+          { id: 3, title: "Post 3", content: "Content of Post 3" },
+          { id: 4, title: "Post 4", content: "Content of Post 4" },
+        ];
+        setBlogPosts((prevPosts) => [...prevPosts, ...newPosts]);
+        setIsLoading(false);
+      }, 1000);
+    }
+  };
+
+  // Simulate fetching blog posts (you can replace this with actual API calls)
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      // Example data (you can replace this with actual data)
+      const newPosts = [
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+        { id: 3, title: "Post 3", content: "Content of Post 3" },
+        { id: 4, title: "Post 4", content: "Content of Post 4" },
+      ];
+      setBlogPosts((prevPosts) => [...prevPosts, ...newPosts]);
+      setIsLoading(false);
+    }, 1000); // Simulated delay
+  }, []); // Empty dependency array to run only once when the component mounts
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 5000); // Simulate a 5-second loading time (adjust as needed)
+  }, []);
   return (
     <>
-      <NavBar />
-      <div className="blogstyings">
-        <article className="cards">
-          <img
-            className="card__background"
-            src="https://i.imgur.com/QYWAcXk.jpeg"
-            alt="Photo of Cartagena's cathedral at the background and some colonial style houses"
-            width="1920"
-            height="2193"
-          />
-          <div className="card__content | flow">
-            <div className="card__content--container | flow">
-              <h2 className="card__title">Colombia</h2>
-              <p className="card__description">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum
-                in labore laudantium deserunt fugiat numquam.
-              </p>
+      {loading ? (
+        <div className="loader-container">
+          <div className="spinner"></div>
+        </div>
+      ) : (
+        <Layout title="blogs | read latest blogs and trending news free">
+          <NavBar />
+          <div className="blog-page">
+            <div className="blog-left" onScroll={handleScroll}>
+              {blogPosts.map((post) => (
+                <div className="blog-card" key={post.id}>
+                  <h2>{post.title}</h2>
+                  <p>{post.content}</p>
+                </div>
+              ))}
+              {isLoading && <p>Loading...</p>}
             </div>
-            <button className="card__button">Read more</button>
+            <div className="blog-right">
+              <div className="recent-posts">
+                <h3>Recent Posts</h3>
+                <ul>
+                  {blogPosts.slice(0, 10).map((post) => (
+                    <li key={post.id}>
+                      <a href="#">{post.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="popular-topics">
+                <h3>Popular Topics</h3>
+                <ul>
+                  {/* Render up to 4 popular topics here */}
+                  {/* ... */}
+                </ul>
+              </div>
+              <div className="search">
+                <input type="text" placeholder="Search..." />
+                <button>Search</button>
+              </div>
+            </div>
           </div>
-        </article>
-      </div>
+        </Layout>
+      )}
     </>
   );
 };
