@@ -95,8 +95,10 @@ const Blog: React.FC = () => {
   return (
     <>
       {loading ? (
-        <div className="loader-container">
-          <div className="spinner"></div>
+        <div className="container">
+          <div className="progress progress-striped">
+            <div className="progress-bar"></div>
+          </div>
         </div>
       ) : (
         <Layout title="blogs | read latest blogs and trending news free">
