@@ -1,13 +1,13 @@
 import React from "react";
 import "../assets/css/buttontechstack.scss";
-import { GrVirtualMachine } from "react-icons/gr";
 import { TbBrandPython } from "react-icons/tb";
-import { SiSparkpost } from "react-icons/si";
+import { SiCsharp } from "react-icons/si";
 import { FaNode } from "react-icons/fa6";
-import { SiCreatereactapp } from "react-icons/si";
-import { SiNuxtdotjs } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiBun } from "react-icons/si";
 import { SiGithub } from "react-icons/si";
 import { SiMongodb } from "react-icons/si";
+import { FaRust } from "react-icons/fa";
 const TechStack: React.FC = () => {
   return (
     <div className="tcontainer">
@@ -16,7 +16,7 @@ const TechStack: React.FC = () => {
           <div className="top">
             <div className="tech1 icon-container">
               <p>
-                <SiCreatereactapp size={40} />
+                <TbBrandNextjs size={40} />
               </p>
             </div>
           </div>
@@ -34,7 +34,7 @@ const TechStack: React.FC = () => {
           </div>
           <div className="top">
             <div className="tech4 icon-container">
-              <SiSparkpost size={40} />
+              <SiCsharp size={40} />
             </div>
           </div>
         </div>
@@ -42,14 +42,14 @@ const TechStack: React.FC = () => {
           <div className="bottom">
             <div className="tech1 icon-container">
               <p>
-                <GrVirtualMachine size={40} />
+                <FaRust size={40} />
               </p>
             </div>
           </div>
           <div className="bottom">
             <div className="tech1 icon-container">
               <p>
-                <SiNuxtdotjs size={40} />
+                <SiBun size={40} />
               </p>
             </div>
           </div>
