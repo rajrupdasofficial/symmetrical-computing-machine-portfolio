@@ -1,116 +1,53 @@
-:root {
-    --card-height: 400px;
-    --card-width: calc(var(--card-height) / 1.5);
-  }
 .thirdSection{
-    max-width: 80vw;
-    margin: auto;
-    height: 70vh;
+  margin-left: 110px;
 }
-.playarea{
-    margin-left: -40vh;
-}
-.playarea .grview{
-    display: grid;
-    grid-row-gap: 2px;
-}
-
-.card {
-    width: var(--card-width);
-    height: var(--card-height);
-    background: linear-gradient(tomato,rgb(248, 74, 74),rgb(252, 122, 122));
-    position: relative;
+.thirdSection {
+  .heading {
+    background: transparent;
+    border: 1px solid #000; // 1px round border
+    padding: 70px;
+    text-align: center; /* Center text horizontally */
+    margin-bottom: 20px; /* Add margin to separate from project cards */
+    
+  }
+  @media (max-width: 600px) {
+    .thirdSection {
+      margin-left: 23px;
+  
+    }
+  }
+  .project-cards {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 0 36px;
-    perspective: 2500px;
-    margin: 70px 270px;
+    flex-wrap: wrap; /* Wrap cards to the next line if there's not enough space */
+    justify-content: space-between;
+    gap: 20px; /* Add gap between cards */
+    padding: 123px 145px;
+    @media (max-width: 600px) {
+      flex-direction: column; /* Stack cards on top of each other */
+      padding: 35px; /* Adjust padding for mobile view */
+    }
   }
-  
-  .cover-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .wrapper {
-    transition: all 0.5s;
-    position: absolute;
-    width: 100%;
-    z-index: -1;
-  }
-  
-  .card:hover .wrapper {
-    transform: perspective(900px) translateY(-5%) rotateX(25deg) translateZ(0);
-    box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-    -webkit-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 2px 35px 32px -8px rgba(0, 0, 0, 0.75);
-  }
-  
-  .wrapper::before,
-  .wrapper::after {
-    content: "";
-    opacity: 0;
-    width: 100%;
-    height: 80px;
-    transition: all 0.5s;
-    position: absolute;
-    left: 0;
-  }
-  .wrapper::before {
-    top: 0;
-    height: 100%;
-    background-image: linear-gradient(
-      to top,
-      transparent 46%,
-      rgba(12, 13, 19, 0.5) 68%,
-      rgba(12, 13, 19) 97%
-    );
-  }
-  .wrapper::after {
-    bottom: 0;
-    opacity: 1;
-    background-image: linear-gradient(
-      to bottom,
-      transparent 46%,
-      rgba(12, 13, 19, 0.5) 68%,
-      rgba(12, 13, 19) 97%
-    );
-  }
-  
-  .card:hover .wrapper::before,
-  .wrapper::after {
-    opacity: 1;
-  }
-  
-  .card:hover .wrapper::after {
-    height: 120px;
-  }
-  .title {
-    width: 100%;
-    transition: transform 0.5s;
-  }
-  .card:hover .title {
-    transform: translate3d(0%, -50px, 100px);
-  }
-  
-  .character {
-    width: 100%;
-    opacity: 0;
-    transition: all 0.5s;
-    position: absolute;
-    z-index: -1;
-  }
-  
-  .card:hover .character {
-    opacity: 1;
-    transform: translate3d(0%, -30%, 100px);
-  }
-@media (max-width:600px){
-.card{display: none;}
-.thirdSection{
-  display: none;
-}
 
+  .project-card {
+    flex: 1;
+    background-color: transparent; // Card background color
+    border: 1px solid whitesmoke; // 1px round border
+    padding: 70px; /* Adjust padding for mobile view */
+    width: calc(50% - 20px); /* Set width for each card (50% of the container width) */
+    box-sizing: border-box; /* Include padding in the width calculation */
+    @media (max-width: 600px) {
+      width: 100%; /* Full width for mobile view */
+      padding: 27px;
+      margin: 0px -43px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
 }

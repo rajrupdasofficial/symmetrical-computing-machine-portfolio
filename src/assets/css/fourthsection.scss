@@ -1,9 +1,13 @@
 
 .fourthSection{
-    margin-left: 80vh;
-    margin-top: 30vh;
+  margin-left: 73vh;
+  margin-top: 30vh;
 }
 
+.seperatorx {
+  margin-left: -40vh;
+  margin-top: -170px;
+}
 .card-container {
     max-height: 500px; /* Adjust the max height as needed */
     overflow-y: auto;
@@ -16,8 +20,9 @@
     width: 100%;
     max-width: 800px;
     margin: 20px;
-    background: linear-gradient(90deg, #f06, #9f6); /* Linear gradient background */
+    background: linear-gradient(90deg, rgb(17, 17, 17), rgb(0, 0, 0)); /* Linear gradient background */
     border-radius: 10px;
+    border: 2px solid white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
@@ -58,6 +63,7 @@
       }
   
       .read-more {
+        margin-top: 15px;
         background-color: #007bff;
         color: #fff;
         border: none;
@@ -73,3 +79,22 @@
     }
   }
   
+@media screen and (max-width: 768px) {
+  .fourthSection {
+    margin-left: -3vh;
+    margin-top: 8vh;
+    // overflow-y: hidden;
+  }
+  .seperatorx {
+    margin-top: 16px;
+    margin-left: 90px;
+  }
+  .card-container {
+    overflow-y: auto;
+  }
+  .cardz {
+    margin: 20px 53px;
+    max-width: 80%;
+  } /* Adjust to fit the screen width */
+  
+}
